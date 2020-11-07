@@ -1,14 +1,15 @@
 def two_sum(nums, target):
     answer = []
-    nums_reversed = list(reversed(nums))
-    for i in nums_reversed:
-        for j in nums_reversed:
-            print(i, " ", j)
-            
-            if i != j and i + j == target:
-                answer.insert(0, nums.index(i))
-                answer.insert(1, nums.index(j))
 
+    nums_reversed = list(reversed(nums))
+
+    for i in nums:
+        for j in nums_reversed:
+            # print(i, " ", j)
+            
+            if i + j == target:
+                answer.insert(0, nums.index(i)) 
+                answer.insert(1, nums.index(j, nums.index(i)+1))
                 break
         if len(answer) == 2:
             break
@@ -17,8 +18,8 @@ def two_sum(nums, target):
 
 
 def main():
-    nums = [3, 3]
-    target = 6
+    nums = [2,7,11,15]
+    target = 9
     print(two_sum(nums, target))
 
 
