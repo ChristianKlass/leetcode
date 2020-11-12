@@ -1,5 +1,5 @@
 def reverse(x):
-    reversed = ""
+    reversed_number = ""
     is_negative = False
 
     if x == 0:
@@ -10,14 +10,14 @@ def reverse(x):
     str_number = str(abs(x))
 
     for i in str_number[::-1]:
-      reversed = reversed + i
+        reversed_number += i
 
-    answer = int(reversed)
-    if is_negative:
-        answer = answer * -1
-
-    if answer >= 2147483647 or answer <= -2147483648:
+    answer = int(reversed_number)
+    if answer >= 2147483647:
         answer = 0
+        
+    elif is_negative:
+        answer = answer * -1
 
     return answer
 
