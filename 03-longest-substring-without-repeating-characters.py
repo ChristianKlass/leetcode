@@ -20,7 +20,7 @@ def longest_substring(s: str) -> int:
     # if len(longest) < len(current):
     #     longest = current
 
-    return len(longest)
+    return str_len
 
 
 def main():
