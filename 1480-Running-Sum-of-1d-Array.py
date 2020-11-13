@@ -3,6 +3,9 @@ def runningSum(nums):
   sum_list.append(nums[0])
 
   for i in range(1, len(nums)):
+    # nums[i] = nums[i] + nums[i-1]
+    # Strangely, just doing the above is LESS efficient than making a new list and appending.
+
     sum_list.append(sum_list[i - 1] + nums[i])
 
   return sum_list
