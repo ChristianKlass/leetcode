@@ -1,26 +1,27 @@
 def first_unique(s: str) -> int:
-  # handle 1 character or 1st char != 2nd char
-  if (len(s) == 1) or (s[0] != s[1]):
-    index = 0
+  x = ""
+  index = -1
   # handle empty string
-  elif (len(s) == 0):
+  if (len(s) == 0):
     index = -1
-  # handle last char
-  elif (s[len(s) - 2] != s[len(s) - 1]):
-    index = len(s) - 1
+  # handle 1 character
+  elif (len(s) == 1):
+    index = 0
   # everything else
   else:
-    for i in range (1, len(s) -1):
-      if s[i] != s[i+1] and s[i-1] != s[i]:
-        index = i
-        break
+    x = s
+    for i in x:
+      if x.count(i) != 1:
+        x = x.replace(i, '')
+
+    if len(x) != 0:
+      index = s.index(x[0])
 
   return index
 
 
 def main():
-    s = "123fdvamosvpmadd"
-
+    s = "cc"
     print(first_unique(s))
 
 
